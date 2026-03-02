@@ -1,74 +1,74 @@
-/* Resetowanie stylów podstawowych dla wszystkich elementów */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Wprowadzenie clearfix dla pływających elementów */
 .clearfix::after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* Stylizacja nagłówka */
 header {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center; /* Wyrównanie do środka dla całej zawartości */
-  min-height: 70vh; /* Dostosuj wysokość w zależności od zawartości */
-  background-image: url('images/ph1 (4).png');
+  align-items: center;
+  min-height: 70vh;
+  background-image: url("images/nowe/tlo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: white;
-  padding: 20px; /* Dodano padding dla bezpiecznego marginesu */
+  padding: 20px;
 }
 
-/* Stylizacja div.welcome w nagłówku */
 div.welcome {
-  width: 100%; /* Pełna szerokość do wykorzystania przez Flexbox */
-  max-width: 1200px; /* Maksymalna szerokość dla lepszego wyglądu na dużych ekranach */
-  font-family: 'Saira Condensed', sans-serif;
+  width: 100%;
+  max-width: 1200px;
+  font-family: "Saira Condensed", sans-serif;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  background-color: rgba(0, 0, 0, 0.5); /* Poprawa czytelności tekstu */
-  padding: 20px; /* Odpowiedni padding dla wygodnej odsłony */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
 }
 
-/* Stylizacja pozostałych elementów nagłówka */
-header h1, header h2, header p {
-  margin-top: 15px; /* Drobne marginesy dla lepszego rozdzielenia tekstu */
+header h1,
+header h2,
+header p {
+  margin-top: 15px;
 }
 
 header h2 {
   font-weight: normal;
 }
-header .phone-wrap{margin-top:15px;}
-header .phone{
-  display:inline-block;
+header .phone-wrap {
+  margin-top: 15px;
+}
+header .phone {
+  display: inline-block;
   color: inherit;
   text-decoration: none;
-  font-size: clamp(28px, 4vw, 56px);
+  font-size: clamp(35px, 8vw, 100px);
   letter-spacing: 1px;
+  text-decoration: underline;
 }
-header .phone:focus-visible{
+header .phone:focus-visible {
   outline: 3px solid white;
   outline-offset: 4px;
 }
-header .cta, header .hours{
+header .cta,
+header .hours {
   margin-top: 15px;
   font-weight: normal;
 }
 
-
 header button {
-  font-family: 'Saira', sans-serif;
+  font-family: "Saira", sans-serif;
   font-weight: 300;
   line-height: 32px;
   padding: 0 20px;
@@ -78,7 +78,9 @@ header button {
   font-size: 15px;
   border: 2px solid white;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s; /* Dodano płynne przejście */
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 header button:hover {
@@ -86,9 +88,12 @@ header button:hover {
   color: #111;
 }
 
-/* Różne media queries dla odpowiedniego dostosowania do urządzeń */
 @media (orientation: portrait) and (min-width: 360px) {
-  header h1, header h2 {
+  header {
+    background-image: url("images/nowe/tlo2.png");
+  }
+  header h1,
+  header h2 {
     font-size: 24px;
   }
 
@@ -99,10 +104,6 @@ header button:hover {
   }
 }
 
-/* Kontynuacja media queries... */
-
-/* Sekcja 1 nasze cechy*/
-
 .features {
   max-width: 1600px;
   margin: 50px auto 0;
@@ -111,20 +112,20 @@ header button:hover {
 }
 
 .features > h2 {
-  font-family: 'Saira Condensed', sans-serif;
+  font-family: "Saira Condensed", sans-serif;
   font-size: 26px;
   text-transform: uppercase;
   margin-bottom: 15px;
 }
 
 .features h3 {
-  font-family: 'Saira Condensed', sans-serif;
+  font-family: "Saira Condensed", sans-serif;
   font-size: 22px;
   text-transform: uppercase;
 }
 
 .features p {
-  font-family: 'Saira', sans-serif;
+  font-family: "Saira", sans-serif;
   font-size: 12px;
   font-weight: 300;
   margin: 20px 0;
@@ -136,19 +137,34 @@ header button:hover {
   max-width: 375px;
 }
 
-@media (min-width:360px) {
-  .features > h2 { font-size: 28px; }
-  .features h3 { font-size: 24px; }
-  .features p { font-size: 14px; }
+@media (max-width: 360px) {
+   header {
+    background-image: url("images/nowe/tlo2.png");
+  }
+  .features > h2 {
+    font-size: 28px;
+  }
+  .features h3 {
+    font-size: 24px;
+  }
+  .features p {
+    font-size: 14px;
+  }
 }
 
-@media (min-width:768px) {
-  .features > h2 { font-size: 36px; }
-  .features h3 { font-size: 28px; }
-  .features p { font-size: 18px; }
+@media (min-width: 768px) {
+  .features > h2 {
+    font-size: 36px;
+  }
+  .features h3 {
+    font-size: 28px;
+  }
+  .features p {
+    font-size: 18px;
+  }
 }
 
-@media (min-width:1024px) {
+@media (min-width: 1024px) {
   .features {
     margin-top: 50px;
     padding: 5% 2%;
@@ -158,11 +174,17 @@ header button:hover {
     gap: 30px;
     align-items: start;
   }
-  .features > h2 { grid-column: 1 / -1; }
+  .features > h2 {
+    grid-column: 1 / -1;
+  }
 
-  .feature { padding: 20px; }
+  .feature {
+    padding: 20px;
+  }
 
-  .features h3 { font-size: 22px; }
+  .features h3 {
+    font-size: 22px;
+  }
   .features p {
     font-size: 16px;
     line-height: 120%;
@@ -170,10 +192,16 @@ header button:hover {
   }
 }
 
-@media (min-width:1600px) {
-  .feature { padding: 20px 50px; }
-  .features > h2 { font-size: 60px; }
-  .features h3 { font-size: 32px; }
+@media (min-width: 1600px) {
+  .feature {
+    padding: 20px 50px;
+  }
+  .features > h2 {
+    font-size: 60px;
+  }
+  .features h3 {
+    font-size: 32px;
+  }
   .features p {
     font-size: 21px;
     line-height: 140%;
@@ -188,8 +216,7 @@ header button:hover {
 
 .portfolio h1 {
   font-size: 28px;
-  font-family: 'Saira Condensed',
-  sans-serif;
+  font-family: "Saira Condensed", sans-serif;
   text-transform: uppercase;
   color: white;
   text-align: center;
@@ -203,8 +230,7 @@ header button:hover {
 
 .portfolio .about {
   color: white;
-  font-family: 'Saira',
-  sans-serif;
+  font-family: "Saira", sans-serif;
   font-weight: normal;
   padding: 10px 20px 20px 0;
   text-align: left;
@@ -236,8 +262,7 @@ header button:hover {
   background-color: #29a6dc;
 }
 
-@media (min-width:768px) {
-
+@media (min-width: 768px) {
   .portfolio h1 {
     font-size: 40px;
   }
@@ -255,7 +280,6 @@ header button:hover {
   .portfolio .project {
     margin-bottom: 40px;
   }
-
 }
 
 @media (orientation: landscape) {
@@ -271,7 +295,6 @@ header button:hover {
 
   .portfolio .project:nth-of-type(even) .web {
     float: right;
-
   }
   .portfolio .project:nth-of-type(even) .about {
     padding-right: 0;
@@ -283,10 +306,7 @@ header button:hover {
     text-indent: 0;
     margin-left: 40px;
   }
-
-
 }
-
 
 @media (orientation: landscape) and (min-width: 1400px) {
   .portfolio h1 {
@@ -312,29 +332,26 @@ header button:hover {
   }
 }
 
-
 /* Sekcja telefon*/
 
 .telefon {
   text-align: center;
-  background-image: url('images/ph1.jpg');
+  background-image: url("images/ph1.jpg");
   background-size: cover;
   background-position: center;
-  
 
   color: white;
 }
 
 .telefon h1 {
-  font-family: 'Saira Condensed', sans-serif;
+  font-family: "Saira Condensed", sans-serif;
   font-size: 26px;
   text-transform: uppercase;
   margin-bottom: 25px;
-
 }
 
 .telefon p {
-  font-family: 'Saira', sans-serif;
+  font-family: "Saira", sans-serif;
   font-size: 18px;
 }
 
@@ -364,16 +381,13 @@ header button:hover {
 }
 
 @media (min-width: 768px) {
-
   .telefon .bg {
     padding: 50px 10px;
-
   }
 
   .telefon h1 {
     font-size: 48px;
     margin-bottom: 35px;
-
   }
 
   .telefon p {
@@ -389,16 +403,13 @@ header button:hover {
 }
 
 @media (min-width: 1024px) {
-
   .telefon .bg {
     padding: 80px 10px;
-
   }
 
   .telefon h1 {
     font-size: 60px;
     margin-bottom: 55px;
-
   }
 
   .telefon p {
@@ -421,7 +432,6 @@ header button:hover {
 
 .hobby .item {
   height: 25vh;
-
 }
 
 .hobby .item {
@@ -445,27 +455,26 @@ header button:hover {
   background-image: url(../images/hobby4.jpg);
 }
 
-
 .hobby .item p {
-  font-family: 'saira', sans-serif;
+  font-family: "saira", sans-serif;
   color: white;
   text-align: center;
   /*  line-height: 25vh;*/
   text-shadow: 0 0 4px black;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   font-size: 20px;
   padding: 5px 0;
 }
 
 .hobby h1 {
-  font-family: 'saira condensed', sans-serif;
+  font-family: "saira condensed", sans-serif;
   padding: 20px;
   text-align: center;
   font-size: 36px;
   text-transform: uppercase;
 }
 
-@media (min-width:533px) {
+@media (min-width: 533px) {
   .hobby .item {
     float: left;
     width: 50%;
@@ -473,13 +482,11 @@ header button:hover {
   }
 }
 
-@media (min-width:768px) {
-
+@media (min-width: 768px) {
   .hobby h1 {
     font-size: 48px;
     margin-top: 40px;
     margin-bottom: 35px;
-
   }
 
   .hobby .item p {
@@ -509,7 +516,6 @@ header button:hover {
   .hobby .item:hover {
     background-size: 130%;
   }
-
 }
 
 @media (min-width: 1600px) {
@@ -517,14 +523,12 @@ header button:hover {
     font-size: 60px;
     margin-top: 50px;
     margin-bottom: 45px;
-
   }
 
   .hobby .item p {
     font-size: 40px;
   }
 }
-
 
 /* sekcja contact */
 
@@ -534,8 +538,7 @@ header button:hover {
 }
 
 .contact h1 {
-  font-family: 'Saira Condensed',
-  sans-serif;
+  font-family: "Saira Condensed", sans-serif;
   font-size: 26px;
   text-transform: uppercase;
   margin-bottom: 15px;
@@ -560,13 +563,11 @@ header button:hover {
 }
 
 .contact input {
-
   height: 36px;
-
 }
 
 .contact textarea {
-  height: 120px
+  height: 120px;
 }
 
 .contact button {
@@ -583,16 +584,15 @@ header button:hover {
 }
 
 .contact .social {
-
   padding: 10px 0;
   color: white;
-  font-family: saira condensed, sans-serif;
-
+  font-family:
+    saira condensed,
+    sans-serif;
 }
 
 .contact .social img {
   float: left;
-
 }
 
 .contact .social span {
@@ -610,7 +610,6 @@ header button:hover {
 }
 
 @media (min-width: 1024px) {
-
   .contact h1 {
     font-size: 60px;
     padding: 30px 0;
@@ -619,7 +618,7 @@ header button:hover {
   .contact .socials {
     float: left;
     width: 50%;
-    padding: 0 20px
+    padding: 0 20px;
   }
 
   .contact .social {
@@ -632,13 +631,10 @@ header button:hover {
   .contact button,
   .contact textarea {
     margin-bottom: 35px;
-
   }
   .contact input {
-
     height: 46px;
     font-size: 24px;
-
   }
 
   .contact textarea {
@@ -649,16 +645,14 @@ header button:hover {
   .contact button {
     font-size: 20px;
     line-height: 50px;
-    transition: .3s;
+    transition: 0.3s;
     cursor: pointer;
-
   }
   .contact button:hover {
     color: black;
     background-color: #fff;
   }
 }
-
 
 footer {
   background-color: #29a6dc;
@@ -669,8 +663,8 @@ footer {
   font-size: 20px;
 }
 
-
-
-@media (min-width:1024px) {
-  .telefon { background-attachment: fixed; }
+@media (min-width: 1024px) {
+  .telefon {
+    background-attachment: fixed;
+  }
 }
